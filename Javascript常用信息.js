@@ -91,3 +91,12 @@ d.getMilliseconds()
 d.getDay()
 星期几, 0-6
 */
+
+/*表驱动法是指在复杂情景下，使用表来查找信息，而不是依靠一层套一层的 if else 逻辑语句来选择不同结果。
+实际应用举例：
+计算今年（2018）每个月的天数
+var daysPerMonth = function(month) {
+    var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    var result = days[month - 1]
+    return result
+}*/
