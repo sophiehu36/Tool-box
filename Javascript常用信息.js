@@ -100,3 +100,61 @@ var daysPerMonth = function(month) {
     var result = days[month - 1]
     return result
 }*/
+
+//console.log() 打印多参数
+//console.group() 分层
+//console.table() 以表格方式显示数据
+//console.log(JSON.parse(JSON.stringify(arr))) 可以查看当前引用值的状态
+//console.dir() 打印对象的属性列表,可以在参数中定义
+
+Sub.prototype = Object.create(Super.prototype)
+
+var countAndSay = function(n) {
+    //用一个变量保存最终的字符串
+    //初始为1，因为n = 1的时候，最终字符串就是1
+    let finalString = '1'
+    //当前值的下标指针，初始为0
+    let charactorPointer = 0
+    //当前计数的指针下标，初始为0
+    let countPointer = 0
+    //新的字符串，变化的字符串
+    //因为最终值要等循环结束才能确认
+    let stringInProgress = ''
+    //用n的值来决定循环变化次数
+    while(n > 1) {
+        //计数指针不能超过最终字符串的长度
+        while(countPointer < finalString.length) {
+            //查看最终字符串，如果连续下标对应相同值
+            //就不断把计数指针向后移动，也就是+1
+            //查看计数指针作为下标的字符串值是否仍与值指针对应的值相等
+            while(finalString[charactorPointer] === finalString[countPointer]) {
+                countPointer++
+            }
+            //countPointer与charactorPointer的差就是指针移动了几次
+            //也就是说相同的数字连续出现了几次
+            //我们要得到的字符串有两个部分组成
+            //第一个部分是相同数字连续出现的次数
+            //第二个部分是这个连续出现的相同数字的值
+            //也就是值下标对应的值
+            stringInProgress += `${(countPointer-charactorPointer)}${finalString[charactorPointer]}`
+            //当出现一个不一样的值时，当前值的下标指针变成计数指针的值
+            charactorPointer = countPointer
+            //此时如果计数指针下标比最终字符串长度小，循环就会继续
+            //查看计数指针作为下标的字符串值是否仍与值指针对应的值相等
+        }
+        //计数指针下标 = 最终字符串长度时，就会跳出循环
+        //把最终字符串值替换为最终确认下来的变化的字符串
+        finalString = stringInProgress
+        //重置指针和变化的字符串
+        stringInProgress = ''
+        countPointer = 0
+        charactorPointer = 0
+        //此时n-1,因为要进入下一次循环
+        n--
+    } 
+    //n = 1的时候循环结束了
+    if(n === 1) {
+        return finalString
+    }
+};
+
