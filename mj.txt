@@ -17,19 +17,30 @@ const object1 = {};
 object1.property1 = 42;
 object1.hasOwnProperty(property1)
 
-事件委托是什么
+事件委托是什么：
+就是把目标节点的事件绑定到祖先节点上。这种简单而优雅的事件注册方式是基于事件传播过程中，逐层冒泡总能被祖先节点捕获。
+这样做的好处：优化代码，提升运行性能，真正把 HTML 和 JavaScript 分离，也能防止出现在动态添加或删除节点过程中注册的事件丢失的现象。
   
 vue相关：
-v-if和v-show的区别
-watch和computed区别
-平时用到哪些vue的生命周期钩子
-vue数据传递方式
-vue-router路由守卫，延伸到token过期时未发送的数据如何处理
+v-if和v-show的区别: v-if 是控制元素的添加与删除，而 v-show 只是控制元素的 display 属性
+watch和computed区别:
+3.1 computed特性
+1.是计算值，
+2.应用：就是简化tempalte里面{{}}计算和处理props或$emit的传值
+3.具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数
+3.2 watch特性
+1.是观察的动作，
+2.应用：监听props，$emit或本组件的值执行异步操作
+3.无缓存性，页面重新渲染时值不变化也会执行
+
+平时用到哪些vue的生命周期钩子 beforeCreate created beforeMount mounted updated
+vue数据传递方式 props,$emit,bus
+vue-router路由守卫，beforeEach,afterEach,延伸到token过期时未发送的数据如何处理
 
 网络请求相关：
 http状态码平时接触到哪些？314（可能听错了，查了一下没有314，只有304）的话如何处理
 平时网络请求用fetch还是axios。axios和ajax区别
 
 简历项目相关：
-vue-draggable利用了哪些原生事件。
-动态更改主题颜色功能是如何实现的。
+vue-draggable利用了哪些原生事件。drag,dragend,dragenter,dragleave,dragover,dragstart,drop
+动态更改主题颜色功能是如何实现的。theme-generator
