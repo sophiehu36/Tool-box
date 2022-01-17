@@ -62,4 +62,4 @@ axios基于promise对ajax进行了封装
 
 简历项目相关：
 vue-draggable利用了哪些原生事件。drag,dragend,dragenter,dragleave,dragover,dragstart,drop
-动态更改主题颜色功能是如何实现的。theme-generator
+动态更改主题颜色功能是如何实现的。antd-theme-generator
