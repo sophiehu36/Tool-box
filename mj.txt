@@ -33,13 +33,32 @@ watch和computed区别:
 2.应用：监听props，$emit或本组件的值执行异步操作
 3.无缓存性，页面重新渲染时值不变化也会执行
 
-平时用到哪些vue的生命周期钩子 beforeCreate created beforeMount mounted updated
-vue数据传递方式 props,$emit,bus
+平时用到哪些vue的生命周期钩子 beforeCreate created beforeMount mounted beforeUpdate updated (keep-alive: activated deactivated) beforeDestroy destroyed errorCaptured（新增） 
+
+vue数据传递方式 props,$emit,v-bind.sync, provide,inject, vuex
+父组件和子组件间通信：
+父向子传递数据是通过props，子向父传递数据是通过event($emit)；
+通过父链/子链进行数据传递($parent / $children)；
+通过 ref 也可以访问组件实例；
+依赖注入：provide / inject；
+兄弟组件间通信：
+event bus
+Vuex
+跨级组件间通信：
+event bus；
+Vuex；
+依赖注入：provide / inject；
+
 vue-router路由守卫，beforeEach,afterEach,延伸到token过期时未发送的数据如何处理
+路由守卫：路由跳转的一些验证
 
 网络请求相关：
 http状态码平时接触到哪些？314（可能听错了，查了一下没有314，只有304）的话如何处理
+
 平时网络请求用fetch还是axios。axios和ajax区别
+fetch 是 JavaScript 原生库，浏览器都支持，无需安装直接使用；axios 不是原生库，需要安装才能使用；
+fetch 只能在浏览器环境中运行；axios 既可以在浏览器、也可以在node.js 环境中运行。
+axios基于promise对ajax进行了封装
 
 简历项目相关：
 vue-draggable利用了哪些原生事件。drag,dragend,dragenter,dragleave,dragover,dragstart,drop
